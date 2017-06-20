@@ -65,10 +65,10 @@ function configuraciones($mail){
 function enviarCorreo($mail , $datos = []){
     configuraciones($mail);
       //Set who the message is to be sent from
-    $mail->setFrom($datos['administrador'], 'administrador');
+    $mail->setFrom($datos['correo'], $datos['nombre']);
 
     //Set who the message is to be sent to
-    $mail->addAddress($datos['correo'], $datos['nombre']);
+    $mail->addAddress($datos['administrador'], 'administrador');
     //Set the subject line
     $mail->Subject = $datos['asunto'];
     //Read an HTML message body from an external file, convert referenced images to embedded,
